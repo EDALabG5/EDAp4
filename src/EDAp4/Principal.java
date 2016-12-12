@@ -12,7 +12,7 @@ public class Principal{
 	public static void main(String[] args){
 		
 		File archivo = new File(new File("").getAbsolutePath() + "\\src\\MetroBikeShare_2016_Q3_trips.csv");
-		ArrayList<Trayecto> lista = new ArrayList<Trayecto>(ListaOrdenada(Lectura(archivo)));
+		ArrayList<Trayecto> lista = new ArrayList<Trayecto>(Lectura(archivo));
 		VerLista(lista);
 	}
 	
