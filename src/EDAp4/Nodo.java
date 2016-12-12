@@ -1,43 +1,46 @@
 package EDAp4;
 
-public class Nodo {
-	private double lat;
-	private double lon;
-	private int codigo;
+import graphsDSESIUCLM.Element;
+
+public class Nodo implements Element{
+
+	private String ID, latitud, longitud; //Strings para los valores que definen el nodo (estacion)
+	//contructor
+	public Nodo(String ID, String lat,String lon){
+		this.ID = ID;
+		this.latitud = lat;
+		this.longitud = lon;
+	}
 	
-	public Nodo(int codigo, double lat, double lon){
-		this.lat = lat;
-		this.lon = lon;
-		this.codigo = codigo;
+	//Latitud y Longitud donde se encuentra el nodo
+	public String getLatitud() {
+		return latitud;
 	}
 
-	public double getLat() {
-		return lat;
+	public void setLatitud(String latitud) {
+		this.latitud = latitud;
 	}
 
-	public void setLat(double lat) {
-		this.lat = lat;
+	public String getLongitud() {
+		return longitud;
 	}
 
-	public double getLon() {
-		return lon;
+	public void setLongitud(String longitud) {
+		this.longitud = longitud;
 	}
-
-	public void setLon(double lon) {
-		this.lon = lon;
+	
+	public void setID(String ID){
+		this.ID = ID;
 	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	
+	public String getID() {
+		return this.ID;
 	}
 
 	@Override
 	public String toString() {
-		return "Nodo [lat=" + lat + ", lon=" + lon + ", codigo=" + codigo + "]";
+		return "Nodo [ID=" + ID + ", latitud=" + latitud + ", longitud=" + longitud + "]";
 	}
-
+	
+	
 }

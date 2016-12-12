@@ -1,4 +1,7 @@
 package EDAp4;
+
+import graphsDSESIUCLM.Vertex;
+
 public class Trayecto {
 	Nodo n1, n2;
 	int tiempo;
