@@ -1,8 +1,6 @@
 package EDAp4;
 
-import graphsDSESIUCLM.Element;
-
-public class Nodo implements Element{
+public class Nodo{
 
 	private String ID, latitud, longitud; //Strings para los valores que definen el nodo (estacion)
 	//contructor

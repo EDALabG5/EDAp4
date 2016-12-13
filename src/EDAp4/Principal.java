@@ -1,31 +1,25 @@
 package EDAp4;
 
-import graphsDSESIUCLM.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
+import graphsDSESIUCLM.*;
+import java.util.Iterator;
 
-public class Principal{
+public class Principal implements Iterable<Graph>{
 	public static Scanner Teclado = new Scanner(System.in);
 	public static void main(String[] args){
 		
 		File archivo = new File(new File("").getAbsolutePath() + "\\src\\MetroBikeShare_2016_Q3_trips.csv");
-		ArrayList<Trayecto> lista = new ArrayList<Trayecto>(Lectura(archivo));
-		VerLista(lista);
-	}
-	
-	
-	public static void VerLista(ArrayList<Trayecto> lista){ //nos permite ver la lista de trayectos
-		for(int i = 0; i < lista.size(); i++){
-			System.out.println(i+" - "+lista.get(i).toString());
-		}
-	}
-	
-	public static ArrayList<Trayecto> Lectura(File fichero){ //leemos el fichero con un Split
+		Graph grafo = Lectura(archivo);
 		
-		ArrayList<Trayecto> lista = new ArrayList<Trayecto>();
+	}
+	
+	
+	public static Graph Lectura(File fichero){ //leemos el fichero con un Split
+		
+		Graph gr = null;
 		
 		Nodo n1, n2;
 		try{
@@ -37,8 +31,19 @@ public class Principal{
 				int tiempo = Integer.parseInt(lineacomoarray[1]);
 				n1 = new Nodo(lineacomoarray[4], lineacomoarray[5], lineacomoarray[6]);
 				n2 = new Nodo(lineacomoarray[7], lineacomoarray[8], lineacomoarray[9]);
-				Trayecto nuevo = new Trayecto(n1,n2,tiempo);
-				if(tiempo <=300 && tiempo >= 0 && !n1.equals(n2)){
+				
+				ElementoDecorado e1 = new ElementoDecorado(lineacomoarray[4], n1);
+				ElementoDecorado e2 = new ElementoDecorado(lineacomoarray[7], n2);
+				
+				Vertex<ElementoDecorado> v1, v2;
+				
+				for(int i = 0; i < gr.)
+				
+				v1= gr.insertVertex(v1);
+				v2= gr.insertVertex(n2);
+				gr.insertEdge(v1, v2)
+			
+				if(tiempo <=300 && ){
 				if(lista.isEmpty()){
 					lista.add(nuevo);
 				}
@@ -60,7 +65,14 @@ public class Principal{
 			System.out.println("Ha ocurrido un error, finalizando el programa");
 		}
 		
-		return lista;
+		return gr;
+	}
+
+
+	@Override
+	public Iterator<Graph> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
